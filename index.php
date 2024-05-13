@@ -1,26 +1,11 @@
+<?php include './nav.php'; ?>
+<h1>Home page</h1>
+
 <?php
-function getStatus($message) {
-  $messageStatus = $message;
-  echo($messageStatus);
+function sum(...$nums)
+{
+	var_dump($nums);
+	return array_sum($nums);
 }
 
-getStatus("hello wordsld");
-
-
-// Short circuiting.
-function example() {
-  return "Hello example";
-}
-
-var_dump(true && example());
-
-$a = 1;
-
-while($a < 15) {
-  echo $a . "<br>";
-  $a++;
-}
-
-for($i=0; $i<4; $i++) {
-  echo( 'test for loop ,<br>');
-}
+echo sum(2, 2, 2);
