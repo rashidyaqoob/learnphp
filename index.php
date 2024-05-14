@@ -2,10 +2,30 @@
 <h1>Home page</h1>
 
 <?php
-function sum(...$nums)
-{
-	var_dump($nums);
-	return array_sum($nums);
+
+$users = ["John", "Doe", "Ala"];
+
+if (array_key_exists(2, $users)) {
+    echo 'Users found';
 }
 
-echo sum(2, 2, 2);
+$users = array_filter($users, fn($user) => $user !== "Doe");
+
+print_r(array_values($users));
+
+
+function getNewName(): string
+{
+    // Generate two random uppercase letters
+    $letters = range(A, Z);
+    shuffle(($letters));
+
+    // Generate three random digits
+    $digits = rand(0, 999);
+
+    // Return the combined result
+    return $letters[0] . $letters[4] . $digits;
+}
+
+// Example of using the function
+echo getNewName();
