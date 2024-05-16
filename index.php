@@ -2,6 +2,7 @@
 <h1>Home page</h1>
 
 <?php
+require_once 'Account.php';
 
 $users = ["John", "Doe", "Ala"];
 
@@ -28,4 +29,13 @@ function getNewName(): string
 }
 
 // Example of using the function
-echo getNewName();
+echo getNewName() . '<br> <br>';
+
+$account = new Account;
+$myAccount = new Account;
+$account->name = 'Rasj';
+
+var_dump($account->name);
+var_dump($myAccount->name);
+
+
