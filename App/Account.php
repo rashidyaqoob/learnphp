@@ -2,19 +2,22 @@
 declare(strict_types=1);
 
 namespace App;
+use DateTime as DT;
+new DT();
 
-new \DateTime();
-
-class Account
-{
-    public Socialmedia $socialMedia;
+class Account {
     public string $name;
     public float $balance;
+    public Socialmedia $socialMedia;
 
-    public function __construct(string $newName, float $newBalance)
-    {
-        $this->name = $newName;
-        $this->balance = $newBalance;
+    public function __construct($name, $balance) {
+        $this->name = $name;
+        $this->balance = $balance;
         $this->socialMedia = new Socialmedia();
+    }
+
+    public function deposit(float $amount) {
+        $this->balance += $amount;
+        return $this;
     }
 }
