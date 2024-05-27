@@ -17,15 +17,21 @@
 require_once 'App/Account.php';
 require_once 'App/SocialMedia.php';
 
-use App\Account;
+
+use App\{Account, Socialmedia};
 
 
 $dateTime = new DateTime();
 
 
-$account = new Account('John', 30, 'Social');
+$account = new Account('John', 30);
+$socialMedia = new Socialmedia();
 
-var_dump($account);
+$account->deposit(50)->deposit(20);
+
+var_dump($socialMedia);
+echo '<br><br><br>';
+var_dump($dateTime);
 
 
 
