@@ -25,12 +25,14 @@ spl_autoload_register(function ($class) {
 });
 
 
-use App\{Account, Socialmedia, Utility, RestaurantOne};
+use App\{Account, Socialmedia, Utility, RestaurantOne, RestaurantTwo, FoodApp};
 
 
 $dateTime = new DateTime();
-
-$restaurant = new RestaurantOne();
+echo '<br><br><br>';
+$restaurant = new FoodApp(
+    new RestaurantTwo()
+);
 
 
 $account = new Account('John', 30);
@@ -39,7 +41,7 @@ $socialMedia = new Socialmedia();
 $account->deposit(50)->deposit(20);
 
 echo '<br><br><br>';
-$restaurant->prepareFood();
+
 echo '<br><br><br>';
 
 var_dump($account->getBalance() . ' Get balance');
