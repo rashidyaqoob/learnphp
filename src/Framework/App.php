@@ -6,8 +6,17 @@ namespace Framework;
 
 class App
 {
+    private Router $router;
+    public function __construct()
+    {
+        $this->router = new Router;
+    }
     public function run()
     {
         echo 'App was run';
+    }
+    public function get(string $path)
+    {
+        $this->router->add('GET', $path);
     }
 }
